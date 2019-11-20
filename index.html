@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Focus - Direcciones</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 500px;
+        width: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+  
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <form>
+
+            <div class="form-group">
+              <label for="pac-input">Dirección o empresa</label>
+              <input class="form-control" id="pac-input" type="text" placeholder="Ingrese una dirección o empresa">
+              <small id="emailHelp" class="form-text text-muted">Introduzca una dirección o el nombre de una empresa y selecciónelo de una lista.</small>
+            </div>
+            
+            <div class="row">
+              <div class="col-8">
+                <div class="form-group">
+                  <label for="calle">Calle</label>
+                  <input type="text" class="form-control" id="calle" placeholder="" readonly>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="numero">Número</label>
+                  <input type="text" class="form-control" id="numero" placeholder="" readonly>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="barrio">Ciudad o Barrio</label>
+                    <input type="text" class="form-control" id="barrio" placeholder="" readonly>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="comuna">Comuna o Distrito</label>
+                    <input type="text" class="form-control" id="comuna" placeholder="" readonly>
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="provincia">Provincia</label>
+                    <input type="text" class="form-control" id="provincia" placeholder="" readonly>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="pais">País</label>
+                    <input type="text" class="form-control" id="pais" placeholder="" readonly>
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="latitud">Latitud</label>
+                    <input type="text" class="form-control" id="latitud" placeholder="" readonly>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="longitud">Longitud</label>
+                    <input type="text" class="form-control" id="longitud" placeholder="" readonly>
+                  </div>
+                </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <div class="row">
+          <div class="col-sm">
+            <div id="map"></div>
+          </div>
+      </div>
+
+    </div>
+
+
+
+    
+    <div id="infowindow-content">
+      <img src="" width="16" height="16" id="place-icon">
+      <span id="place-name"  class="title"></span><br>
+      <span id="place-address"></span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="googlemaps.js">
+      
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhvPNnkyKjhfPWnAPyfTj0539BWjOUA0&libraries=places&callback=initMap"
+        async defer></script>
+  </body>
+</html>
